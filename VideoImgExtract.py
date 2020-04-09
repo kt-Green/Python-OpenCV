@@ -1,14 +1,15 @@
+# Necessary imports
 import os
 import cv2
-
+# Change the directory to your video path
 os.chdir('Your\VideoFolder\path')
-
+# Try to create a folder if found already, continue;
 try:
     if not os.path.exists('Name_your_folder_for_the_frames'):
         os.makedirs('Name_your_folder_for_the_frames')
 except OSError:
     print('Error: Creating directory of data')
-
+# To ensure the differentiation in images
 currentFrame = 0
 kat = cv2.VideoCapture('Your_Video_Name.extension')
 ret, frame = kat.read()
